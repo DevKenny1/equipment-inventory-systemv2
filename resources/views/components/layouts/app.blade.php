@@ -30,9 +30,8 @@
         showNotification(event.detail.title,
             event.detail.message,
             event.detail.type,
-            2,
-            'regular',
-            'same_one');
+            1,
+            'regular');
     });
 </script>
 

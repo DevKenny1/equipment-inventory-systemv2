@@ -84,8 +84,15 @@
                                     wire:click="deleteUser({{$user->id}})">Delete</x-bladewind::button>
                             </div>
                         </x-bladewind::modal>
-                        @include('livewire.edit-user', ['user_id' => $user->id])
-
+                        <x-bladewind::modal show_action_buttons="false" type="blank" name="edit-user" size="large" blur_size="none">
+                            <form action="">
+                                <h1 class="text-center">Edit Users</h1>
+                                <x-bladewind::input wire:model="name" />
+                                <x-bladewind::input wire:model="username" />
+                                <x-bladewind::input wire:model="role" />
+                                <x-bladewind::input wire:model="status" />
+                            </form>
+                        </x-bladewind::modal>
             @endforeach
         </x-bladewind::table>
         @if (!count($users))
@@ -102,16 +109,16 @@
             <div>
                 Items per page:
                 <select class="w-16 px-2" wire:model="itemPerPage">
+                    <option value="5">5</option>
                     <option value="10">10</option>
+                    <option value="15">15</option>
                     <option value="20">20</option>
+                    <option value="25">25</option>
                     <option value="30">30</option>
+                    <option value="35">35</option>
                     <option value="40">40</option>
+                    <option value="45">45</option>
                     <option value="50">50</option>
-                    <option value="60">60</option>
-                    <option value="70">70</option>
-                    <option value="80">80</option>
-                    <option value="90">90</option>
-                    <option value="100">100</option>
                 </select>
             </div>
         </div>
